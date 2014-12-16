@@ -1,0 +1,56 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-cookies.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+<script src="cricket_app.js"></script>
+
+<body ng-app='CricketInfoApp'>
+    <div ng-controller='MainController'>
+        <table>
+            <tr>
+                <td>Total Money Left</td> 
+                <td>{{money}}</td>
+            </tr>
+            <tr>
+                <td>Batsman Selected</td> 
+                <td>{{batsmen}}</td>
+            </tr>
+            <tr>
+                <td>Bowlers Selected</td> 
+                <td>{{bowlers}}</td>
+            </tr>
+            <tr>
+                <td>WicketKeepers Selected</td> 
+                <td>{{keepers}}</td>
+            </tr>
+            <tr>
+                <td>AllRounders Selected</td> 
+                <td>{{all_rounders}}</td>
+            </tr>
+        </table>
+        <h1> Select Team from Below </h1>
+        <table>
+        <tr>
+        <td><button ng-click='save_team()'>Save Team</button></td>
+        <td><button ng-click='reset_selections()'>Reset Selections</button></td>
+        </tr>
+        </table>
+        <table>
+            <tr>
+                <td>Player Name</td>
+                <td>Player Type</td>
+                <td>Player Cost</td>
+                <td>Action</td>
+            </tr>
+            <tbody ng-repeat='player in choices'>
+             <tr>   
+                <td>{{player.name}}</td>
+                <td>{{player.type}}</td>
+                <td>{{player.cost}}</td>
+                <td><button ng-hide="!player.hidden" ng-click='select($index)'>Select</button>
+                <button ng-hide="player.hidden" ng-click='discard($index)'>Discard</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
