@@ -1,5 +1,5 @@
 # Cricket Team Manager
-----------------------
+
 ## Implements:
 * Select and discard players.
 * Manage team configuration. (Team size 8)
