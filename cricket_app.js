@@ -201,5 +201,8 @@ function($scope){
             $scope.choices[i].hidden = true
             }
         }
+    $scope.get_rules = function(){
+        window.alert('Allowed Team Compositions:\n* 4 batsmen, 1 keeper, 1 allrounder, 2 bowlers\n* 3 batsmen, 1 keeper, 1 allrounder, 3 bowlers\n* 3 batsmen, 1 keeper, 2 allrounders, 2 bowlers')
+        }
 }
 ]);
